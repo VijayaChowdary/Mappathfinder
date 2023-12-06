@@ -1,4 +1,3 @@
-// models/index.js
 const Sequelize = require('sequelize');
 const { development } = require('../sequelize.config');
 

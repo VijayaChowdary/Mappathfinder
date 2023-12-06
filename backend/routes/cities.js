@@ -1,7 +1,9 @@
 const express = require('express');
 const { City } = require('../models');
+const cors = require('cors')
 
 const router = express.Router();
+app.use(cors());
 
 // Get all cities
 router.get('/', async (req, res) => {

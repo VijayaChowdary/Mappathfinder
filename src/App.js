@@ -1,14 +1,11 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Map from './components/Map';
 
 function App() {
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
-    // Fetch City Data from Backend
-    axios.get('http://localhost:3001/cities')
+    axios.get('http://localhost:3001/cities')  // Update the URL to match your backend API endpoint
       .then(response => setCities(response.data))
       .catch(error => console.error('Error fetching city data:', error));
   }, []);
@@ -16,7 +13,11 @@ function App() {
   return (
     <div>
       <h1>City Path Finder</h1>
-      <Map cities={cities} />
+      <ul>
+        {cities.map(city => (
+          <li key={city.id}>{city.name}, {city.state}</li>
+        ))}
+      </ul>
     </div>
   );
 }
