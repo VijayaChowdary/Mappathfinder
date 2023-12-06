@@ -1,0 +1,7 @@
+   {
+    "username": "your_username",
+    "password": "your_password",
+    "database": "city_path_finder_db",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
