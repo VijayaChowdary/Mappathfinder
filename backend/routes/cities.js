@@ -5,7 +5,7 @@ const cors = require('cors')
 const router = express.Router();
 app.use(cors());
 
-// Get all cities
+
 router.get('/', async (req, res) => {
   try {
     const cities = await City.findAll();

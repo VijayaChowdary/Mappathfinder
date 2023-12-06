@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { sequelize } = require('./models');
+const cors = require('cors');
+
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
+app.use(cors()); 
 
 
 app.use('/cities', require('./routes/cities'));
